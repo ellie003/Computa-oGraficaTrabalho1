@@ -4,7 +4,7 @@ local scene = composer.newScene()
 function scene:create(event)
     local sceneGroup = self.view
 
-    local background = display.newImageRect(sceneGroup, "assets/capacontracapa.jpeg", display.contentWidth, display.contentHeight)
+    local background = display.newImageRect(sceneGroup, "assets/contracapa.jpeg", display.contentWidth, display.contentHeight)
     background.x = display.contentCenterX
     background.y = display.contentCenterY
 
