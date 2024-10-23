@@ -5,19 +5,20 @@ function scene:create(event)
     local sceneGroup = self.view
 
     local background = display.newRect(sceneGroup, display.contentCenterX, display.contentCenterY, display.contentWidth, display.contentHeight)
-    background:setFillColor(0.9, 0.9, 0.9) 
+    background:setFillColor("#222B3C") 
 
-    local pageText = display.newText(sceneGroup, "Página 3", display.contentCenterX, display.contentCenterY, native.systemFont, 36)
-    pageText:setFillColor(0, 0, 0)  
+    local pageText = display.newText(sceneGroup, "3", display.contentCenterX, display.contentCenterY + 420, native.systemFont, 60)
+    pageText:setFillColor(1, 1, 1)  
 
-    local nextButton = display.newText(sceneGroup, "Próxima página", display.contentCenterX, display.contentHeight - 100, native.systemFont, 24)
-    nextButton:setFillColor(0.2, 0.6, 1)
+    local nextButton = display.newImageRect(sceneGroup, "assets/botaãoproximo.png", 200, 80)
+    nextButton.x = display.contentWidth - 150
+    nextButton.y = display.contentHeight - 100
     nextButton:addEventListener("tap", function()
         composer.gotoScene("page4")
     end)
-
-    local backButton = display.newText(sceneGroup, "Página anterior", display.contentCenterX, display.contentHeight - 50, native.systemFont, 24)
-    backButton:setFillColor(0.2, 0.6, 1) 
+    local backButton = display.newImageRect(sceneGroup, "assets/botãoanterio.png", 200, 80)
+    backButton.x = 150
+    backButton.y = display.contentHeight - 100
     backButton:addEventListener("tap", function()
         composer.gotoScene("page2")
     end)

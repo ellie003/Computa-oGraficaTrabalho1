@@ -54,7 +54,7 @@ function scene:create(event)
     })
     orientador:setFillColor(1, 1, 1)  
 
-    local autor = display.newText({
+    local eu = display.newText({
         parent = sceneGroup,
         text = "Elen Naiely dos S. Silva",
         x = display.contentCenterX,
@@ -63,7 +63,7 @@ function scene:create(event)
         fontSize = 40,
         align = "center"
     })
-    autor:setFillColor(1, 1, 1)  
+    eu:setFillColor(1, 1, 1)  
 
     local semestre = display.newText({
         parent = sceneGroup,
