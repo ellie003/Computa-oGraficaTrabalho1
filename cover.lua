@@ -47,7 +47,7 @@ function scene:create(event)
     semester:setFillColor(1, 1, 1)  
 
     local nextButton = display.newImageRect(sceneGroup, "assets/botaãoproximo.png", 200, 80)
-    nextButton.x = display.contentWidth - 120
+    nextButton.x = display.contentWidth - 150
     nextButton.y = display.contentHeight - 100
 
     nextButton:addEventListener("tap", function()

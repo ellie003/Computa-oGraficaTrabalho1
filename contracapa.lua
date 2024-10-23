@@ -76,11 +76,11 @@ function scene:create(event)
     })
     semestre:setFillColor(1, 1, 1)  
 
-    local homeButton = display.newImageRect(sceneGroup, "assets/botãoinicio.png", 200, 80)
+    local homeButton = display.newImageRect(sceneGroup, "assets/botãoinicio.png", 200, 85)
     homeButton.x = display.contentWidth - 150
     homeButton.y = display.contentHeight - 100
 
-    local backButton = display.newImageRect(sceneGroup, "assets/botãoanterio.png", 200, 80)
+    local backButton = display.newImageRect(sceneGroup, "assets/botãoanterio.png", 200, 85)
     backButton.x = 150
     backButton.y = display.contentHeight - 100
 

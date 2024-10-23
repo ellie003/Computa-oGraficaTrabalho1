@@ -18,7 +18,7 @@ function scene:create(event)
         composer.gotoScene("page3")
     end)
 
-    local backButton = display.newImageRect(sceneGroup, "assets/botãoanterio.png", 200, 80)
+    local backButton = display.newImageRect(sceneGroup, "assets/botãoanterio.png", 200, 85)
     backButton.x = 150
     backButton.y = display.contentHeight - 100
     backButton:addEventListener("tap", function()
