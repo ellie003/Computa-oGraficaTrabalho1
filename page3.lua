@@ -54,21 +54,21 @@ function scene:create(event)
 
         -- Verificar se a tabela de microorganismos existe
         if microorganisms then
-            -- Mover todos os micro-organismos para cima da nova imagem
+           
             for i, microorganism in ipairs(microorganisms) do
                 transition.to(microorganism, {
                     time = 1000,
-                    x = instrucoesImagem.x, -- X da imagem
-                    y = instrucoesImagem.y - 50, -- Y um pouco acima da imagem
+                    x = instrucoesImagem.x,
+                    y = instrucoesImagem.y - 50, 
                     onComplete = function()
-                        -- Aqui você pode adicionar um comportamento extra após a animação, se necessário
+                       
                     end
                 })
             end
         end
     end
 
-    -- Adiciona o ouvinte de evento para a imagem
+    
     instrucoesImagem:addEventListener("tap", onImageTap)
 
     local instructionText = display.newText({
@@ -120,11 +120,11 @@ function scene:create(event)
             muteButton.isVisible = false
             unmuteButton.isVisible = true
     
-            -- Tocar o som uma vez e configurar o retorno quando o áudio terminar
+           
             audioChannel = audio.play(audioFile, {
-                loops = 0,  -- Tocar uma vez
+                loops = 0,  
                 onComplete = function()
-                    -- Quando o áudio terminar, volta para o estado de som desligado
+                   
                     muteButton.isVisible = true
                     unmuteButton.isVisible = false
                 end

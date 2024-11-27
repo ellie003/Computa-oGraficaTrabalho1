@@ -10,8 +10,6 @@ function scene:create(event)
     background.y = display.contentCenterY
 
     
-
-    -- Título
     local title = display.newText({
         parent = sceneGroup,
         text = "Origem da Vida\n(Hipóteses e Teorias)",
@@ -23,7 +21,6 @@ function scene:create(event)
     })
     title:setFillColor(1, 1, 1)
 
-    -- Texto da disciplina
     local disciplina = display.newText({
         parent = sceneGroup,
         text = "Disciplina: Computação Gráfica e\nSistemas Multimídia;",
@@ -35,7 +32,7 @@ function scene:create(event)
     })
     disciplina:setFillColor(1, 1, 1)
 
-    -- Referência bibliográfica
+ 
     local referencia = display.newText({
         parent = sceneGroup,
         text = "LOPES, Sônia; ROSSO, Sérgio. Bio - Volume Único. 1. ed.\nSão Paulo: Saraiva, 2004.",
@@ -47,7 +44,6 @@ function scene:create(event)
     })
     referencia:setFillColor(1, 1, 1)
 
-    -- Orientador
     local orientador = display.newText({
         parent = sceneGroup,
         text = "Orientador: Prof. Ewerton Mendonça",
@@ -59,7 +55,7 @@ function scene:create(event)
     })
     orientador:setFillColor(1, 1, 1)
 
-    -- Nome do autor
+  
     local eu = display.newText({
         parent = sceneGroup,
         text = "Elen Naiely dos S. Silva",
@@ -71,7 +67,7 @@ function scene:create(event)
     })
     eu:setFillColor(1, 1, 1)
 
-    -- Semestre
+
     local semester = display.newText({
         parent = sceneGroup,
         text = "2024.2",
@@ -83,7 +79,6 @@ function scene:create(event)
     })
     semester:setFillColor(1, 1, 1)
 
-    -- Botões de navegação
     local homeButton = display.newImageRect(sceneGroup, "assets/botãoinicio.png", 200, 85)
     homeButton.x = display.contentWidth - 150
     homeButton.y = display.contentHeight - 100
@@ -100,7 +95,7 @@ function scene:create(event)
         composer.gotoScene("cover")
     end)
 
-    -- Botões de controle de som
+   
     local muteButton = display.newImageRect(sceneGroup, "assets/SomDesligado.png", 230, 100)
     muteButton.x = 130
     muteButton.y = display.contentHeight - 910
@@ -110,15 +105,15 @@ function scene:create(event)
     unmuteButton.y = display.contentHeight - 910
     unmuteButton.isVisible = false
 
-    -------------------- Variáveis de controle de áudio -------------------------
-    local audioFile = audio.loadSound("assets/contracapa.mp3")  -- Carregar o áudio
+   
+    local audioFile = audio.loadSound("assets/contracapa.mp3")  
 
     local function toggleSound(event)
         if muteButton.isVisible then
             muteButton.isVisible = false
             unmuteButton.isVisible = true
             audio.play(audioFile, { loops = 0, onComplete = function() 
-                -- Quando o áudio terminar, o botão volta ao estado "desligado"
+             
                 muteButton.isVisible = true
                 unmuteButton.isVisible = false
                 print("Áudio terminado, som desligado.")
@@ -127,7 +122,7 @@ function scene:create(event)
         else
             muteButton.isVisible = true
             unmuteButton.isVisible = false
-            audio.stop()  -- Para o áudio
+            audio.stop()  
             print("Som desligado!")
         end
     end
@@ -135,9 +130,9 @@ function scene:create(event)
     muteButton:addEventListener("tap", toggleSound)
     unmuteButton:addEventListener("tap", toggleSound)
 
-    -------------------- Interrupção do áudio ao mudar de página -------------------------
+  
     scene:addEventListener("hide", function(event)
-        audio.stop()  -- Interrompe o áudio quando a cena for escondida
+        audio.stop()  
     end)
 end
 

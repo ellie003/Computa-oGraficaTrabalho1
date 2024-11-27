@@ -8,7 +8,6 @@ function scene:create(event)
     local background = display.newRect(sceneGroup, display.contentCenterX, display.contentCenterY, display.contentWidth, display.contentHeight)
     background:setFillColor(0.133, 0.169, 0.235)
 
-    --------------------- Título e texto ---------------------
     local fontFile = "assets/Lora-Regular.ttf"
     local boldfontFile = "assets/Lora-Bold.ttf"
     local topText = display.newText(sceneGroup, "Hipótese da Abiogênese", display.contentCenterX + 120, 120, boldfontFile, 35)
@@ -166,7 +165,7 @@ function scene:create(event)
         image5.x = display.contentCenterX + 40
         image5.y = display.contentCenterY
         organism.isVisible = false
-        movedCount = 0  -- Resetando contagem de movimentos
+        movedCount = 0  
         -- Parar o áudio
         audio.stop()
     end)
